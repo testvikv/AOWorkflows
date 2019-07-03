@@ -1,0 +1,56 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_0186MXHBZMQSG14NOsza2mdlgbXN9MvkFwI",
+    "name": "xpathQuery2",
+    "title": "xpathQuery2",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "xpathQuery2",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_0186MXRSB8S1C2A1jMNCPggow8ZEEcDwE7z",
+        "name": "XPath Query",
+        "title": "XPath Query",
+        "type": "core.xpathquery",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "XPath Query",
+          "input_xml": "\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e\n\n\u003cbookstore\u003e\n\n\u003cbook category=\"cooking\"\u003e\n  \u003ctitle lang=\"en\"\u003eEveryday Italian\u003c/title\u003e\n  \u003cauthor\u003eGiada De Laurentiis\u003c/author\u003e\n  \u003cyear\u003e2005\u003c/year\u003e\n  \u003cprice\u003e30.00\u003c/price\u003e\n\u003c/book\u003e\n\n\u003cbook category=\"children\"\u003e\n  \u003ctitle lang=\"en\"\u003eHarry Potter\u003c/title\u003e\n  \u003cauthor\u003eJ K. Rowling\u003c/author\u003e\n  \u003cyear\u003e2005\u003c/year\u003e\n  \u003cprice\u003e29.99\u003c/price\u003e\n\u003c/book\u003e\n\n\u003cbook category=\"web\"\u003e\n  \u003ctitle lang=\"en\"\u003eXQuery Kick Start\u003c/title\u003e\n  \u003cauthor\u003eJames McGovern\u003c/author\u003e\n  \u003cauthor\u003ePer Bothner\u003c/author\u003e\n  \u003cauthor\u003eKurt Cagle\u003c/author\u003e\n  \u003cauthor\u003eJames Linn\u003c/author\u003e\n  \u003cauthor\u003eVaidyanathan Nagarajan\u003c/author\u003e\n  \u003cyear\u003e2003\u003c/year\u003e\n  \u003cprice\u003e49.99\u003c/price\u003e\n\u003c/book\u003e\n\n\u003cbook category=\"web\"\u003e\n  \u003ctitle lang=\"en\"\u003eLearning XML\u003c/title\u003e\n  \u003cauthor\u003eErik T. Ray\u003c/author\u003e\n  \u003cyear\u003e2003\u003c/year\u003e\n  \u003cprice\u003e39.95\u003c/price\u003e\n\u003c/book\u003e\n\n\u003c/bookstore\u003e",
+          "xpath_queries": [
+            {
+              "xpath_query": "//title[@lang='en']",
+              "xpath_query_name": "sum",
+              "xpath_query_type": "string",
+              "xpath_query_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
