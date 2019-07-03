@@ -1,0 +1,153 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018014GP8KNN65RDtF6gy67uotzcV1bBElv",
+    "name": "RG terminal",
+    "title": "RG terminal",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "RG terminal",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "target_type": "terminal.endpoint",
+        "target_id": "definition_target_017QNCTNYO4WX3146AWzkygbq45MFjAFZV5",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018014L8UCP1S1r0KeS1DR3CyTHb0XL2evy",
+        "name": "Execute Terminal Command(s)",
+        "title": "Execute Terminal Command(s)",
+        "type": "terminal.command",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "command_timeout": 60,
+          "commands": "df -h",
+          "continue_on_failure": false,
+          "display_name": "Execute Terminal Command(s)",
+          "merge_commands": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_017735B28RN6E5K1dmmd6Gk4fL9y8JchnBi"
+          },
+          "user_responses": [
+            {
+              "user_expect": "",
+              "user_response": "Yes"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_0187O466MV1457cxT0Ev8j8SKyvPJGPhYVk",
+        "name": "Create Approval Request",
+        "title": "Create Approval Request",
+        "type": "task.approval_request",
+        "base_type": "activity",
+        "properties": {
+          "approval_choices": [
+            "Approve"
+          ],
+          "assignees": [
+            ""
+          ],
+          "continue_on_failure": false,
+          "display_name": "Create Approval Request",
+          "due_date": {
+            "is_relative_time": true,
+            "is_specified_date": false,
+            "relative_time": {
+              "duration": 15,
+              "time_units": "days"
+            },
+            "set_due_date": true
+          },
+          "expiration_date": {
+            "is_relative_time": true,
+            "is_specified_date": false,
+            "relative_time": {
+              "duration": 15,
+              "time_units": "days"
+            }
+          },
+          "expiration_status": "Expired",
+          "minimum_approvals": 1,
+          "priority": "normal",
+          "subject_line": "test",
+          "task_message": "test",
+          "task_owner": "ramygane@cisco.com",
+          "task_requestor": "ramygane@cisco.com"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_017735B28RN6E5K1dmmd6Gk4fL9y8JchnBi": {
+      "unique_name": "definition_target_017735B28RN6E5K1dmmd6Gk4fL9y8JchnBi",
+      "name": "RG Terminal",
+      "title": "RG Terminal",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_016WX8IT3KOQW150cQmDDgwBlU4pm5v6q1U",
+        "display_name": "RG Terminal",
+        "host": "sjc-cent59-rac1.tidalsoft.local",
+        "port": 22,
+        "protocol": "ssh"
+      }
+    },
+    "definition_target_017QNCTNYO4WX3146AWzkygbq45MFjAFZV5": {
+      "unique_name": "definition_target_017QNCTNYO4WX3146AWzkygbq45MFjAFZV5",
+      "name": "RG Terminal",
+      "title": "RG Terminal",
+      "type": "terminal.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_016WX8IT3KOQW150cQmDDgwBlU4pm5v6q1U",
+        "display_name": "RG Terminal",
+        "host": "sjc-cent59-rac1.tidalsoft.local",
+        "port": 22,
+        "protocol": "ssh"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_016WX8IT3KOQW150cQmDDgwBlU4pm5v6q1U": {
+      "unique_name": "definition_runtime_user_016WX8IT3KOQW150cQmDDgwBlU4pm5v6q1U",
+      "name": "root",
+      "title": "root",
+      "type": "runtime_user.terminal_password_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "root",
+        "password": "*****",
+        "user": "*****"
+      }
+    }
+  }
+}
