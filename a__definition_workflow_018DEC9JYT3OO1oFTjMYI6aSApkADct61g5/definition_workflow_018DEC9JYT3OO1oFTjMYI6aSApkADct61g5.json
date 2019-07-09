@@ -1,0 +1,57 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_018DEC9JYT3OO1oFTjMYI6aSApkADct61g5",
+    "name": "jsonPathQuery1",
+    "title": "jsonPathQuery1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "jsonPathQuery1",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_018DECE0C27HK7VoVKSFZBmjT0djOYiyAnC",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query",
+          "input_json": "{\"_class\":\"hudson.plugins.cobertura.targets.CoverageResult\",\"results\":{\"children\":[{\"children\":[{},{},{},{},{},{}],\"elements\":[{},{},{},{},{}],\"name\":\"bitbucket-eng-sjc1.cisco.com/bitbucket/nextg/adapter-amqp/actions\"}],\"elements\":[\n\n{\"denominator\":1.0,\"name\":\"Packages\",\"numerator\":1.0,\"ratio\":100.0}\n,\n\n{\"denominator\":6.0,\"name\":\"Files\",\"numerator\":6.0,\"ratio\":100.0}\n,\n\n{\"denominator\":7.0,\"name\":\"Classes\",\"numerator\":7.0,\"ratio\":100.0}\n,\n\n{\"denominator\":7.0,\"name\":\"Methods\",\"numerator\":7.0,\"ratio\":100.0}\n,\n\n{\"denominator\":149.69,\"name\":\"Lines\",\"numerator\":148.0,\"ratio\":99.32886}\n,\n\n{\"denominator\":0.0,\"name\":\"Conditionals\",\"numerator\":0.0,\"ratio\":100.0}\n],\"name\":\"Cobertura Coverage Report\"}}",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.results.elements[?(@.name == 'Lines')].denominator",
+              "jsonpath_query_name": "prop1",
+              "jsonpath_query_type": "number",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
