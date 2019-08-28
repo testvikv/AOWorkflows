@@ -1,0 +1,50 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_019K10I9049V71iF1gTwgB1q79KF9jWS4nL",
+    "name": "formatDateWF1",
+    "title": "formatDateWF1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": null,
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "formatDateWF1",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_019K10P7IM26V5ngDVyc43MC10VgMm7bULN",
+        "name": "Format Date",
+        "title": "Format Date",
+        "type": "core.format_date",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "custom_format": "02 Jan 19 15:55 CST",
+          "display_name": "Format Date",
+          "original_date": "Mon, 11 Feb 2019 10:20:06 -0700",
+          "skip_execution": false,
+          "use_custom_format": true
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
