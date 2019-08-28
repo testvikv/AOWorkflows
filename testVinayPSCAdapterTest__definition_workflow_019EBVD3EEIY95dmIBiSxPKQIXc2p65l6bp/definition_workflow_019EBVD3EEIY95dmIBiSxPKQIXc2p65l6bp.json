@@ -1,0 +1,462 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp",
+    "name": "Vinay PSC Adapater Test Functionlaity Automated",
+    "title": "Vinay PSC Adapater Test Functionlaity Automated",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "TaskID",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HB6VBTOWFW7iIwL42eirvsA5KzlQszLL",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_017NTB5TBZTYM7DvqIpIYbMqlU8y44kSVq2",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Description": "Desc",
+                "ItemID": "1",
+                "Name": "Vin02_Aug"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "Create SI",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HDKR98KJXK3pVGbbMMnJ5u1HSpj57Jrd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_017NTB5TBZTYM7DvqIpIYbMqlU8y44kSVq2",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Description": "Desc_Update",
+                "ItemID": "12",
+                "Name": "Vin02_Aug"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "Update SI",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HDL2V63QY90XAmMmnDL2J5SVHXxww5D3",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_017NTB5TBZTYM7DvqIpIYbMqlU8y44kSVq2",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "Description": "Desc",
+                "ItemID": "12",
+                "Name": "Vin01_Aug"
+              }
+            }
+          ],
+          "scope": "input",
+          "name": "Delete SI",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HDNNT64V2A4kz0xX7l4W0gN3E6biPV1n",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "SiSimpleItem",
+          "scope": "input",
+          "name": "ServiceItemType",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "ServiceItemName",
+          "type": "datatype.string",
+          "description": "ServiceItemName",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_019HB2KC2KY5I6mRz3GVCDGscYXWSNKfTrt",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Vinay PSC Adapater Test Functionlaity Automated",
+      "favorite": false,
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_019EBVMJG0T802599liCBeTPLtaNt27ETNy",
+        "name": "Get Service Item",
+        "title": "Get Service Item",
+        "type": "psc.get_service_item",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "columns_to_read": [
+            {
+              "column_name": "Name"
+            },
+            {
+              "column_name": "Description"
+            }
+          ],
+          "continue_on_failure": true,
+          "display_name": "Get Service Item",
+          "populate_columns": false,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_item_name": "testing",
+          "service_item_type": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku$",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBVP3NGOGR0rAi7KAShFVo2c45mk1D7P",
+        "name": "Find Service Items",
+        "title": "Find Service Items",
+        "type": "psc.list_service_items",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Find Service Items",
+          "filters": [
+            {
+              "attribute_name": "Name",
+              "attribute_operator": "=",
+              "attribute_value": "testing"
+            }
+          ],
+          "populate_columns": true,
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_item_type": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku$",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBVR62F2WF1PGZhdrHQhlaChtkaLJLuA",
+        "name": "Create Service Items",
+        "title": "Create Service Items",
+        "type": "psc.create_service_items",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "attributes": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HDKR98KJXK3pVGbbMMnJ5u1HSpj57Jrd$",
+          "continue_on_failure": true,
+          "display_name": "Create Service Items",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_item_type": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku$",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBVTISDCN10QnecKU2EG2dgqjIMQ6hHx",
+        "name": "Update Service Items",
+        "title": "Update Service Items",
+        "type": "psc.update_service_items",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "attributes": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HDL2V63QY90XAmMmnDL2J5SVHXxww5D3$",
+          "continue_on_failure": true,
+          "display_name": "Update Service Items",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_item_type": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku$",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBVWD50QPY5zZmWa0ZhMAPbpQUsDA7OJ",
+        "name": "Delete Service Items",
+        "title": "Delete Service Items",
+        "type": "psc.delete_service_items",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "attributes": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HDNNT64V2A4kz0xX7l4W0gN3E6biPV1n$",
+          "continue_on_failure": true,
+          "display_name": "Delete Service Items",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "service_item_type": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB28SP1L946voknQKlO50UT0IIHsrlku$",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBVYXDFH8H5VdItJo52h9dSqa4Hj0FS5",
+        "name": "Submit Service Request",
+        "title": "Submit Service Request",
+        "type": "psc.submit_service_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "customer_login_name": "admin",
+          "display_name": "Submit Service Request",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "services": "{\n  \"services\": [\n    {\n      \"name\": \"SampleService\",\n      \"quantity\": \"1\",\n      \"version\": \"0\",\n      \"dictionaries\": [\n        {\n          \"name\": \"LaptopComputerDict\",\n          \"data\": {\n            \"Name\": \"ThinkPad\",\n            \"Vendor\": \"Lenovo\",\n            \"Model\": \"55612\",\n            \"Status\": \"Available\",\n            \"Comments\": \"Lenovo ThinkPad\",\n            \"Price\": \"1200\"\n          }\n        }\n      ]\n    }\n  ]\n}",
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019ECEDPEVL3C23zDHrXoOJugdeIywkMysB",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_019EBVYXDFH8H5VdItJo52h9dSqa4Hj0FS5.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.RequisitionSubmit.id",
+              "jsonpath_query_name": "ReqID",
+              "jsonpath_query_type": "integer"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBW1HK0K2F2Uq4VxXw9SbjGTW8otQThP",
+        "name": "Requisition Status",
+        "title": "Requisition Status",
+        "type": "psc.requisition_status",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Requisition Status",
+          "requisition_id": "$activity.definition_activity_019ECEDPEVL3C23zDHrXoOJugdeIywkMysB.output.jsonpath_queries.ReqID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBW3VGE5KW4WiWIofHZyIVtK4OvjOqTL",
+        "name": "Cancel Service Request",
+        "title": "Cancel Service Request",
+        "type": "psc.cancel_service_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Cancel Service Request",
+          "requisition_id": "$activity.definition_activity_019ECEDPEVL3C23zDHrXoOJugdeIywkMysB.output.jsonpath_queries.ReqID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019ECLWNBKVGZ7iHF75eKx67jnhGgd4TJID",
+        "name": "Requisition Status",
+        "title": "Requisition Status",
+        "type": "psc.requisition_status",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Requisition Status",
+          "requisition_id": "$activity.definition_activity_019ECEDPEVL3C23zDHrXoOJugdeIywkMysB.output.jsonpath_queries.ReqID$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_019EBW63YFZEH3fAno1Z7kCaxchcWYYuSZJ",
+        "name": "Mark Task Complete",
+        "title": "Mark Task Complete",
+        "type": "psc.task_completed",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Mark Task Complete",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ"
+          },
+          "task_id": "$workflow.definition_workflow_019EBVD3EEIY95dmIBiSxPKQIXc2p65l6bp.input.variable_workflow_019HB6VBTOWFW7iIwL42eirvsA5KzlQszLL$"
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ": {
+      "unique_name": "definition_target_018WDQGIVFX6T2nG5aHrc5uUBptTzZI0VbQ",
+      "name": "PSC Vinay",
+      "title": "PSC Vinay",
+      "type": "psc.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_018WDQ75Q3XFF1omwDYX8AVsQgHrPcwxnty",
+        "display_name": "PSC Vinay",
+        "host": "172.21.37.22",
+        "port": 8080,
+        "protocol": "http"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_018WDQ75Q3XFF1omwDYX8AVsQgHrPcwxnty": {
+      "unique_name": "definition_runtime_user_018WDQ75Q3XFF1omwDYX8AVsQgHrPcwxnty",
+      "name": "172.21.37.22",
+      "title": "172.21.37.22",
+      "type": "runtime_user.psc_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "172.21.37.22",
+        "password": "*****",
+        "username": "*****"
+      }
+    }
+  },
+  "table_types": {
+    "tabletype_017NTB5TBZTYM7DvqIpIYbMqlU8y44kSVq2": {
+      "unique_name": "tabletype_017NTB5TBZTYM7DvqIpIYbMqlU8y44kSVq2",
+      "data_type": "datatype.tabletype",
+      "display_name": "Create Psc Table Test",
+      "columns": [
+        {
+          "name": "Description",
+          "title": "Description",
+          "type": "string"
+        },
+        {
+          "name": "ItemID",
+          "title": "ItemID",
+          "type": "string"
+        },
+        {
+          "name": "Name",
+          "title": "Name",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
