@@ -35,7 +35,7 @@
           "custom_format": "02 JAn 19 15:55 CST",
           "description": "test",
           "display_name": "Format Date",
-          "original_date": "02 Jan 18 15:04 CST",
+          "original_date": "02 JAn 19 15:55 CST",
           "skip_execution": false,
           "use_custom_format": true
         },
