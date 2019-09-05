@@ -11,7 +11,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": true,
-      "description": "test",
+      "description": "test1",
       "display_name": "parseDateWF1",
       "runtime_user": {
         "override_target_runtime_user": false,
