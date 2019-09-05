@@ -35,7 +35,7 @@
         "properties": {
           "continue_on_failure": false,
           "display_name": "Convert Xml to Json",
-          "input_xml": "\u003chih\u003e@#%\u003c/hih\u003e\u003e\u003e",
+          "input_xml": "\u003cabc/\u003e",
           "skip_execution": false
         },
         "object_type": "definition_activity"
