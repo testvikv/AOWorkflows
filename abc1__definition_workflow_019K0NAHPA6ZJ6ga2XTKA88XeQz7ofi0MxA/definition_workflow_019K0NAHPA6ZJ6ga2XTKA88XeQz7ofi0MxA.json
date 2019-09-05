@@ -10,7 +10,7 @@
       "atomic": {
         "is_atomic": false
       },
-      "delete_workflow_instance": false,
+      "delete_workflow_instance": true,
       "description": "test",
       "display_name": "parseDateWF1",
       "runtime_user": {
