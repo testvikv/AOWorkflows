@@ -1,0 +1,1 @@
+svn status|grep -v "?"|xargs -I '{}' cp '{}' ~/svn_121_bkup
