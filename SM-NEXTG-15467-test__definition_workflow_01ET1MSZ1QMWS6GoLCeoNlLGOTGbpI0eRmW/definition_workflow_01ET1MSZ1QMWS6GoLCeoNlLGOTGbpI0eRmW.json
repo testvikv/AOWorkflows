@@ -1,0 +1,149 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01ET1MSZ1QMWS6GoLCeoNlLGOTGbpI0eRmW",
+    "name": "SM-NEXTG-15467-test",
+    "title": "SM-NEXTG-15467-test",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "tabletype_01ET1NX2O9MLE6ZvXcJ2OHo0ebhuqSeYy1p",
+        "properties": {
+          "value": [
+            {
+              "column_data": {
+                "test": "0001-01-01T00:00:00+00:00",
+                "test2": "tttt"
+              }
+            }
+          ],
+          "scope": "local",
+          "name": "table-test",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01ET1OIK9G45I4Zwds00V0rHnF1kbdPVioQ",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "SM-NEXTG-15467-test",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01ET1P15IG0HF1JSmUBct36RyOUO3IRIhfT",
+        "name": "Select from Table",
+        "title": "Select from Table",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Select from Table",
+          "input_table": "$workflow.definition_workflow_01ET1MSZ1QMWS6GoLCeoNlLGOTGbpI0eRmW.local.variable_workflow_01ET1OIK9G45I4Zwds00V0rHnF1kbdPVioQ$",
+          "number_of_rows": {
+            "all_rows": true,
+            "at_most": false
+          },
+          "persist_output": false,
+          "skip_execution": false,
+          "sorting": {
+            "no_sort": true,
+            "sort_by": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ET1QUOBR09L2DHNBEr5nJrObk5wDUAsHL",
+        "name": "Add Row to Table",
+        "title": "Add Row to Table",
+        "type": "core.addrowtotable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Add Row to Table",
+          "input_table": "$workflow.definition_workflow_01ET1MSZ1QMWS6GoLCeoNlLGOTGbpI0eRmW.local.variable_workflow_01ET1OIK9G45I4Zwds00V0rHnF1kbdPVioQ$",
+          "row": [
+            {
+              "key": "test",
+              "type": "date"
+            },
+            {
+              "key": "test2",
+              "type": "string",
+              "value": "rere"
+            }
+          ],
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01ET1RHA26T3H14YxNJqJCRy0ZBWYjV2rxo",
+        "name": "Select from Table",
+        "title": "Select from Table",
+        "type": "core.selectfromtable",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "Select from Table",
+          "input_table": "$workflow.definition_workflow_01ET1MSZ1QMWS6GoLCeoNlLGOTGbpI0eRmW.local.variable_workflow_01ET1OIK9G45I4Zwds00V0rHnF1kbdPVioQ$",
+          "number_of_rows": {
+            "all_rows": true,
+            "at_most": false
+          },
+          "persist_output": false,
+          "skip_execution": false,
+          "sorting": {
+            "no_sort": true,
+            "sort_by": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "table_types": {
+    "tabletype_01ET1NX2O9MLE6ZvXcJ2OHo0ebhuqSeYy1p": {
+      "unique_name": "tabletype_01ET1NX2O9MLE6ZvXcJ2OHo0ebhuqSeYy1p",
+      "data_type": "datatype.tabletype",
+      "display_name": "NEXTG-15467-test",
+      "columns": [
+        {
+          "name": "test",
+          "title": "test",
+          "type": "date"
+        },
+        {
+          "name": "test2",
+          "title": "test2",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
